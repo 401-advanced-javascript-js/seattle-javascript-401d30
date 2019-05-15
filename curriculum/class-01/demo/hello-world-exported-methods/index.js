@@ -18,4 +18,4 @@ console.log( hello.sayGoodbye() );
 
 // sayHey() was not imported, so technically it doesn't exist to the outside world.
 // We should get a "function does not exist" error here
-console.log( hello.sayHey() );
+// console.log( hello.sayHey() );

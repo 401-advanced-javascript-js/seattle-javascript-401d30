@@ -2,6 +2,7 @@
 
 // Rather than return a function, this time, we are exposing an object through module.exports
 module.exports = exports = {};
+// const exports = module.exports = {};
 
 exports.myModuleName = '401js Hello World Module';
 

@@ -7,6 +7,6 @@ const hello = require('./lib/hello.js');
 console.log(hello);
 
 // Call that function directly, and it should log out 'Hello, John'
-hello('john');
+hello('jag');
 
 // Here, we imported a node module that itself is just a function, and then ran it.

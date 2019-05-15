@@ -3,7 +3,7 @@
 // Require the module under test
 const hello = require('../../lib/hello.js');
 
-describe('Hello', () => {
+describe('Hello function', () => {
 
   // Tests are documentation.  Is there any need to comment what these are doing?  NOT.
   it('requires one param', () => {
@@ -36,5 +36,12 @@ describe('Hello', () => {
     var expectedOutput = 'Hello, John';
     expect(message).toEqual(expectedOutput);
   });
+});
 
+describe('Goodbye function', () => {
+  it('expected goodbye message', () => {
+    let message = hello.sayGoodbye();
+    let expectedOutput = 'Goodbye';
+    expect(message).toEqual(expectedOutput);
+  });
 });
