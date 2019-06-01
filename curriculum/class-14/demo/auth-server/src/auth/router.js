@@ -16,10 +16,11 @@ authRouter.post('/signup', (req, res, next) => {
       res.set('token', req.token);
       res.cookie('auth', req.token);
       res.send(req.token);
-    }).catch(next);
+    })
+    .catch(next);
 });
 
-authRouter.post('/signin', auth, (req, res, next) => {
+authRouter.post('/signin', auth(), (req, res, next) => {
   res.cookie('auth', req.token);
   res.send(req.token);
 });
@@ -32,8 +33,14 @@ authRouter.get('/oauth', (req,res,next) => {
     .catch(next);
 });
 
-authRouter.get('/protected-route',auth,(request,response,next) => {
-  response.status(200).send();
+authRouter.post('/key', auth(), (request,response,next) => {
+  const key = request.user.generateKey();
+  response.status(200).send(key);
+});
+
+
+authRouter.patch('/jp', auth('update') ,(request,response,next) => {
+  response.status(200).send('What is JP?');
 });
 
 module.exports = authRouter;
