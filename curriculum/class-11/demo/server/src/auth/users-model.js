@@ -73,7 +73,7 @@ users.methods.generateToken = function() {
   // Vinicio - so far we have information we want to make into a token
   // Vinicio - secrets are just a big string
   // for example: hw@P#SGbb7avhVcR^z9CW20hXkx2K2j5wSURgwO4ulG6Ux$IjZYff%q%8RMd9ArwD$Y@%emSfXolwQ&L2eDzo551vHoSisL6ZQ%A
-  return jsonWebToken.sign(tokenData,process.env.SECRET || 'sekret');
+  return jsonWebToken.sign(tokenData,process.env.SECRET || 'secret');
   // Vinicio - having || and a default secret SHOULD ONLY BE DONE IN DEVELOPMENT
   // NEVER IN PRODUCTION
 };
